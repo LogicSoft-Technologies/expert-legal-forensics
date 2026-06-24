@@ -1,6 +1,6 @@
 import HomeHero from "@/components/home/home-hero";
 import HomeStats from "@/components/home/home-stats";
-import HomeIntegratedSolutions from "@/components/Home/home-intergrated-solutions";
+import HomeIntegratedSolutions from "@/components/home/home-intergrated-solutions";
 import HomeAboutPreview from "@/components/home/home-about-preview";
 import HomeAdvantage from "@/components/home/home-advantage";
 import HomeServices from "@/components/home/home-services";
