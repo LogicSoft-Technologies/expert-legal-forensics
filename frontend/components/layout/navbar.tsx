@@ -135,17 +135,20 @@ export default function Navbar() {
       </div>
 
       <nav ref={navRef} className="relative border-b border-[#E5EAF1] bg-white">
-        <div className="mx-auto flex h-[78px] max-w-[88rem] items-center px-6 lg:px-8">
-          <Link href="/" className="mr-8 flex shrink-0 items-center gap-3">
-            <ElnLogo size={50} />
-            <span className="hidden sm:block leading-none">
-              <span className="block font-heading text-[1.1rem] font-semibold leading-tight tracking-wide text-[#0B1F3A] uppercase">
+        <div className="mx-auto flex h-[78px] max-w-[88rem] items-center px-4 sm:px-6 lg:px-8">
+          <Link href="/" className="mr-3 flex min-w-0 shrink-0 items-center gap-2.5 lg:mr-8 lg:gap-3">
+            <span className="shrink-0">
+              <ElnLogo size={44} />
+            </span>
+
+            <span className="block min-w-0 leading-none">
+              <span className="block font-heading text-[0.78rem] font-semibold leading-tight tracking-wide text-[#0B1F3A] uppercase sm:text-[1.1rem]">
                 Expert Legal
               </span>
-              <span className="block font-heading text-[1.35rem] font-bold leading-tight tracking-[0.05em] text-[#C09B5B] uppercase">
+              <span className="block font-heading text-[0.95rem] font-bold leading-tight tracking-[0.04em] text-[#C09B5B] uppercase sm:text-[1.35rem] sm:tracking-[0.05em]">
                 Network
               </span>
-              <span className="mt-[1px] block text-[0.5rem] font-bold uppercase tracking-[0.22em] text-[#0B1F3A]/40">
+              <span className="mt-[1px] block max-w-[128px] truncate text-[0.42rem] font-bold uppercase tracking-[0.14em] text-[#0B1F3A]/40 sm:max-w-none sm:text-[0.5rem] sm:tracking-[0.22em]">
                 Expertise &middot; Evidence &middot; Results
               </span>
             </span>
@@ -202,7 +205,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileOpen((v) => !v)}
-              className="grid size-10 place-items-center border border-[#D6DDE8] lg:hidden"
+              className="grid size-10 shrink-0 place-items-center border border-[#D6DDE8] lg:hidden"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
               <span className="grid gap-[5px]">
@@ -266,11 +269,25 @@ export default function Navbar() {
       <div className={`fixed inset-y-0 right-0 z-[80] w-full max-w-[420px] bg-white shadow-[0_0_60px_rgba(11,31,58,0.18)] transition-transform duration-500 lg:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex h-full flex-col">
           <div className="flex h-[80px] items-center justify-between border-b border-[#E5EAF1] px-5">
-            <div className="flex items-center gap-3">
-              <ElnLogo size={40} />
-              <span className="font-heading text-xl font-semibold text-[#0B1F3A]">Expert Legal Network</span>
+            <div className="flex min-w-0 items-center gap-2.5">
+              <span className="shrink-0">
+                <ElnLogo size={40} />
+              </span>
+
+              <span className="block min-w-0 leading-none">
+                <span className="block font-heading text-[0.8rem] font-semibold uppercase tracking-wide text-[#0B1F3A]">
+                  Expert Legal
+                </span>
+                <span className="block font-heading text-[1rem] font-bold uppercase tracking-[0.05em] text-[#C09B5B]">
+                  Network
+                </span>
+                <span className="mt-[1px] block truncate text-[0.42rem] font-bold uppercase tracking-[0.14em] text-[#0B1F3A]/40">
+                  Expertise &middot; Evidence &middot; Results
+                </span>
+              </span>
             </div>
-            <button onClick={() => setMobileOpen(false)} className="grid size-9 place-items-center border border-[#D6DDE8] text-xl leading-none text-[#3D5470]">
+
+            <button onClick={() => setMobileOpen(false)} className="grid size-9 shrink-0 place-items-center border border-[#D6DDE8] text-xl leading-none text-[#3D5470]">
               &times;
             </button>
           </div>
