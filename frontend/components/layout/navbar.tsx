@@ -36,13 +36,13 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-function ElnLogo({ size = 44 }: { size?: number }) {
+function EliLogo({ size = 44 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="44" cy="44" r="42" stroke="#0B1F3A" strokeWidth="3" fill="white" />
       <path d="M44 6 A38 38 0 0 1 82 44" stroke="#C09B5B" strokeWidth="3" fill="none" strokeLinecap="round" />
       <path d="M44 82 A38 38 0 0 1 6 44" stroke="#C09B5B" strokeWidth="2" fill="none" strokeLinecap="round" />
-      <text x="44" y="56" textAnchor="middle" fontFamily="Georgia, serif" fontSize="28" fontWeight="700" fill="#0B1F3A" letterSpacing="-1">ELN</text>
+      <text x="44" y="56" textAnchor="middle" fontFamily="Georgia, serif" fontSize="28" fontWeight="700" fill="#0B1F3A" letterSpacing="-1">ELI</text>
       <line x1="28" y1="30" x2="60" y2="30" stroke="#0B1F3A" strokeWidth="1.5" />
       <line x1="44" y1="18" x2="44" y2="30" stroke="#0B1F3A" strokeWidth="1.5" />
       <line x1="32" y1="30" x2="28" y2="26" stroke="#0B1F3A" strokeWidth="1.2" />
@@ -138,15 +138,15 @@ export default function Navbar() {
         <div className="mx-auto flex h-[78px] max-w-[88rem] items-center px-4 sm:px-6 lg:px-8">
           <Link href="/" className="mr-3 flex min-w-0 shrink-0 items-center gap-2.5 lg:mr-8 lg:gap-3">
             <span className="shrink-0">
-              <ElnLogo size={44} />
+              <EliLogo size={44} />
             </span>
 
             <span className="block min-w-0 leading-none">
               <span className="block font-heading text-[0.78rem] font-semibold leading-tight tracking-wide text-[#0B1F3A] uppercase sm:text-[1.1rem]">
-                Expert Legal
+                Experts Legal
               </span>
               <span className="block font-heading text-[0.95rem] font-bold leading-tight tracking-[0.04em] text-[#C09B5B] uppercase sm:text-[1.35rem] sm:tracking-[0.05em]">
-                Network
+                Institute
               </span>
               <span className="mt-[1px] block max-w-[128px] truncate text-[0.42rem] font-bold uppercase tracking-[0.14em] text-[#0B1F3A]/40 sm:max-w-none sm:text-[0.5rem] sm:tracking-[0.22em]">
                 Expertise &middot; Evidence &middot; Results
@@ -271,15 +271,15 @@ export default function Navbar() {
           <div className="flex h-[80px] items-center justify-between border-b border-[#E5EAF1] px-5">
             <div className="flex min-w-0 items-center gap-2.5">
               <span className="shrink-0">
-                <ElnLogo size={40} />
+                <EliLogo size={40} />
               </span>
 
               <span className="block min-w-0 leading-none">
                 <span className="block font-heading text-[0.8rem] font-semibold uppercase tracking-wide text-[#0B1F3A]">
-                  Expert Legal
+                  Experts Legal
                 </span>
                 <span className="block font-heading text-[1rem] font-bold uppercase tracking-[0.05em] text-[#C09B5B]">
-                  Network
+                  Institute
                 </span>
                 <span className="mt-[1px] block truncate text-[0.42rem] font-bold uppercase tracking-[0.14em] text-[#0B1F3A]/40">
                   Expertise &middot; Evidence &middot; Results

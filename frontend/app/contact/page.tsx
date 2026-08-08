@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useState } from "react";
 
 const contactReasons = [
   "Expert witness placement",
@@ -25,7 +24,7 @@ const responseCards = [
   },
   {
     title: "Confidential Review",
-    body: "Avoid submitting highly sensitive records through this starter form. Use the form to request secure upload instructions first.",
+    body: "Avoid submitting highly sensitive records through this form. Call or email us first to request secure upload instructions.",
   },
 ];
 
@@ -33,8 +32,8 @@ const officeDetails = [
   { label: "Phone", value: "(800) 555-0100", href: "tel:+18005550100" },
   {
     label: "Email",
-    value: "consultations@expertlegalnetwork.com",
-    href: "mailto:consultations@expertlegalnetwork.com",
+    value: "consultations@expertslegalinstitute.com",
+    href: "mailto:consultations@expertslegalinstitute.com",
   },
   { label: "Response", value: "Within one business day", href: null },
   { label: "Availability", value: "Nationwide matters", href: null },
@@ -48,47 +47,51 @@ const intakeChecklist = [
   "Preferred contact method",
 ];
 
+const initialForm = {
+  name: "",
+  email: "",
+  phone: "",
+  organization: "",
+  reason: contactReasons[0],
+  timeline: "",
+  message: "",
+};
+
+type Status = "idle" | "submitting" | "success" | "error";
+
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    organization: "",
-    reason: contactReasons[0],
-    timeline: "",
-    message: "",
-  });
+  const [form, setForm] = useState(initialForm);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const mailtoHref = useMemo(() => {
-    const subject = encodeURIComponent(`Consultation Request - ${form.reason}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${form.name}`,
-        `Email: ${form.email}`,
-        `Phone: ${form.phone}`,
-        `Organization: ${form.organization}`,
-        `Reason: ${form.reason}`,
-        `Timeline: ${form.timeline}`,
-        "",
-        "Message:",
-        form.message,
-      ].join("\n")
-    );
-
-    return `mailto:consultations@expertlegalnetwork.com?subject=${subject}&body=${body}`;
-  }, [form]);
-
-  const updateField = (
-    field: keyof typeof form,
-    value: string
-  ) => {
+  const updateField = (field: keyof typeof form, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+
+      setStatus("success");
+      setForm(initialForm);
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -116,10 +119,9 @@ export default function ContactPage() {
             </h1>
 
             <p className="mt-7 max-w-[680px] text-[16px] leading-[1.85] text-white/64">
-              Tell us what your matter requires. This form is ready for a
-              no-backend setup now, and you can later connect it to Formspree,
-              Basin, Netlify Forms, Google Forms, Airtable, or another free form
-              service.
+              Tell us what your matter requires. Submitting this form sends your
+              request straight to our team, and you&apos;ll get an immediate
+              confirmation email while we prepare a full response.
             </p>
           </div>
 
@@ -191,20 +193,31 @@ export default function ContactPage() {
                 Tell us about your matter.
               </h2>
               <p className="mt-4 max-w-[680px] text-[14px] leading-[1.75] text-[#6B82A0]">
-                This form currently validates the user flow on the frontend. The
-                mail link below can send the prepared inquiry by email until you
-                connect a form provider.
+                Submitting sends your request directly to our intake team, and
+                you&apos;ll receive an immediate confirmation email at the
+                address you provide.
               </p>
             </div>
 
-            {submitted && (
+            {status === "success" && (
               <div className="mb-6 border border-[#C09B5B]/35 bg-[#C09B5B]/10 p-5">
                 <p className="text-[14px] font-semibold text-[#0B1F3A]">
-                  Your inquiry is prepared.
+                  Your request has been sent.
                 </p>
                 <p className="mt-1 text-[13px] leading-relaxed text-[#3D5470]">
-                  Use the email button below to send it now, or connect this
-                  form to your preferred form service later.
+                  Check your inbox for a confirmation email. Our team will
+                  follow up within one business day.
+                </p>
+              </div>
+            )}
+
+            {status === "error" && (
+              <div className="mb-6 border border-red-300 bg-red-50 p-5">
+                <p className="text-[14px] font-semibold text-red-800">
+                  We couldn&apos;t send your request.
+                </p>
+                <p className="mt-1 text-[13px] leading-relaxed text-red-700">
+                  {errorMessage || "Please try again, or call us directly at (800) 555-0100."}
                 </p>
               </div>
             )}
@@ -313,16 +326,17 @@ export default function ContactPage() {
               <div className="flex flex-col gap-3 border-t border-[#E5EAF1] pt-6 sm:flex-row sm:items-center">
                 <button
                   type="submit"
-                  className="inline-flex h-[50px] items-center justify-center bg-[#0B1F3A] px-8 text-[11px] font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#C09B5B]"
+                  disabled={status === "submitting"}
+                  className="inline-flex h-[50px] items-center justify-center bg-[#0B1F3A] px-8 text-[11px] font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#C09B5B] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Prepare Inquiry
+                  {status === "submitting" ? "Sending..." : "Send Request"}
                 </button>
 
                 <a
-                  href={mailtoHref}
+                  href="tel:+18005550100"
                   className="inline-flex h-[50px] items-center justify-center border border-[#DDE4EF] px-8 text-[11px] font-black uppercase tracking-[0.16em] text-[#0B1F3A] transition hover:border-[#C09B5B] hover:text-[#C09B5B]"
                 >
-                  Send by Email
+                  Call Instead
                 </a>
               </div>
             </form>
@@ -370,7 +384,7 @@ export default function ContactPage() {
           </div>
 
           <a
-            href="mailto:consultations@expertlegalnetwork.com"
+            href="mailto:consultations@expertslegalinstitute.com"
             className="inline-flex h-[50px] w-fit items-center justify-center bg-white px-8 text-[11px] font-black uppercase tracking-[0.16em] text-[#0B1F3A] transition hover:bg-[#071225] hover:text-white"
           >
             Email Intake

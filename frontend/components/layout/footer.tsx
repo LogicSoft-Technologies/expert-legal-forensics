@@ -35,13 +35,13 @@ const pillars = [
   { icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 10l2 2 4-4", label: "Results Driven" },
 ];
 
-function ElnLogoLight({ size = 52 }: { size?: number }) {
+function EliLogoLight({ size = 52 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="44" cy="44" r="42" stroke="white" strokeWidth="2.5" fill="transparent" />
       <path d="M44 4 A40 40 0 0 1 84 44" stroke="#C09B5B" strokeWidth="3" fill="none" strokeLinecap="round" />
       <path d="M44 84 A40 40 0 0 1 4 44" stroke="#C09B5B" strokeWidth="2" fill="none" strokeLinecap="round" />
-      <text x="44" y="56" textAnchor="middle" fontFamily="Georgia, serif" fontSize="28" fontWeight="700" fill="white" letterSpacing="-1">ELN</text>
+      <text x="44" y="56" textAnchor="middle" fontFamily="Georgia, serif" fontSize="28" fontWeight="700" fill="white" letterSpacing="-1">ELI</text>
       <line x1="28" y1="30" x2="60" y2="30" stroke="white" strokeWidth="1.4" opacity="0.7" />
       <line x1="44" y1="18" x2="44" y2="30" stroke="white" strokeWidth="1.4" opacity="0.7" />
     </svg>
@@ -70,13 +70,13 @@ export default function Footer() {
         <div className="grid gap-10 border-b border-white/[0.08] pb-10 lg:grid-cols-[0.9fr_1.7fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-4">
-              <ElnLogoLight size={52} />
+              <EliLogoLight size={52} />
               <span className="leading-none">
                 <span className="block font-heading text-[1rem] font-semibold uppercase tracking-wide text-white">
-                  Expert Legal
+                  Experts Legal
                 </span>
                 <span className="block font-heading text-[1.22rem] font-bold uppercase tracking-[0.06em] text-[#C09B5B]">
-                  Network&trade;
+                  Institute&trade;
                 </span>
                 <span className="mt-1 block text-[0.5rem] font-bold uppercase tracking-[0.18em] text-white/35">
                   Expertise &middot; Evidence &middot; Results
@@ -94,8 +94,8 @@ export default function Footer() {
               <a href="tel:+18005550100" className="text-[13px] text-white/60 transition hover:text-[#D4B483]">
                 (800) 555-0100
               </a>
-              <a href="mailto:consultations@expertlegalnetwork.com" className="text-[13px] text-white/60 transition hover:text-[#D4B483]">
-                consultations@expertlegalnetwork.com
+              <a href="mailto:consultations@expertslegalinstitute.com" className="text-[13px] text-white/60 transition hover:text-[#D4B483]">
+                consultations@expertslegalinstitute.com
               </a>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 pt-6 text-[11.5px] text-white/38 md:flex-row md:items-center md:justify-between">
-          <p>&copy; {new Date().getFullYear()} Expert Legal Network&trade;. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Experts Legal Institute&trade;. All rights reserved.</p>
           <div className="flex flex-wrap gap-5">
             <Link href="/privacy-policy" className="transition hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="transition hover:text-white">Terms of Use</Link>
