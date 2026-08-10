@@ -29,11 +29,11 @@ const responseCards = [
 ];
 
 const officeDetails = [
-  { label: "Phone", value: "(800) 555-0100", href: "tel:+18005550100" },
+  { label: "Phone", value: "+1 (973) 900-6754", href: "tel:+19739006754" },
   {
     label: "Email",
-    value: "consultations@expertslegalinstitute.com",
-    href: "mailto:consultations@expertslegalinstitute.com",
+    value: "mail@expertlegalinstitute.com",
+    href: "mailto:mail@expertlegalinstitute.com",
   },
   { label: "Response", value: "Within one business day", href: null },
   { label: "Availability", value: "Nationwide matters", href: null },
@@ -217,7 +217,7 @@ export default function ContactPage() {
                   We couldn&apos;t send your request.
                 </p>
                 <p className="mt-1 text-[13px] leading-relaxed text-red-700">
-                  {errorMessage || "Please try again, or call us directly at (800) 555-0100."}
+                  {errorMessage || "Please try again, or call us directly at +1 (973) 900-6754."}
                 </p>
               </div>
             )}
@@ -333,7 +333,7 @@ export default function ContactPage() {
                 </button>
 
                 <a
-                  href="tel:+18005550100"
+                  href="tel:+19739006754"
                   className="inline-flex h-[50px] items-center justify-center border border-[#DDE4EF] px-8 text-[11px] font-black uppercase tracking-[0.16em] text-[#0B1F3A] transition hover:border-[#C09B5B] hover:text-[#C09B5B]"
                 >
                   Call Instead
@@ -384,7 +384,7 @@ export default function ContactPage() {
           </div>
 
           <a
-            href="mailto:consultations@expertslegalinstitute.com"
+            href="mailto:mail@expertlegalinstitute.com"
             className="inline-flex h-[50px] w-fit items-center justify-center bg-white px-8 text-[11px] font-black uppercase tracking-[0.16em] text-[#0B1F3A] transition hover:bg-[#071225] hover:text-white"
           >
             Email Intake

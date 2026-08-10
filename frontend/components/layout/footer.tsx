@@ -91,11 +91,11 @@ export default function Footer() {
             </p>
 
             <div className="mt-6 flex flex-col gap-2.5">
-              <a href="tel:+18005550100" className="text-[13px] text-white/60 transition hover:text-[#D4B483]">
-                (800) 555-0100
+              <a href="tel:+19739006754" className="text-[13px] text-white/60 transition hover:text-[#D4B483]">
+                +1 (973) 900-6754
               </a>
-              <a href="mailto:consultations@expertslegalinstitute.com" className="text-[13px] text-white/60 transition hover:text-[#D4B483]">
-                consultations@expertslegalinstitute.com
+              <a href="mailto:mail@expertlegalinstitute.com" className="text-[13px] text-white/60 transition hover:text-[#D4B483]">
+                mail@expertlegalinstitute.com
               </a>
             </div>
           </div>

@@ -124,8 +124,8 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="tel:+18005550100" className="text-[11px] font-medium text-white/50 transition hover:text-white/90">
-              (800) 555-0100
+            <a href="tel:+19739006754" className="text-[11px] font-medium text-white/50 transition hover:text-white/90">
+              +1 (973) 900-6754
             </a>
             <Link href="/contact" className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#C09B5B] transition hover:text-[#D4B483]">
               Request Consultation
