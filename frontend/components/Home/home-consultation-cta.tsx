@@ -1,9 +1,78 @@
+"use client";
+
 import Link from "next/link";
+import { FormEvent, useState } from "react";
+
+const serviceOptions = [
+  "IME & PQME Network",
+  "Medical Record Review",
+  "Commercial Litigation Expert",
+  "Economic Damages Expert",
+  "AI Compliance & Governance",
+  "Healthcare Compliance",
+  "Digital Forensics",
+  "Cybersecurity Forensics",
+  "Electronic Discovery Support",
+  "Other / Not Sure",
+];
+
+const initialForm = {
+  name: "",
+  organization: "",
+  email: "",
+  phone: "",
+  reason: "",
+  message: "",
+};
+
+type Status = "idle" | "submitting" | "success" | "error";
 
 export default function HomeConsultationCta() {
+  const [form, setForm] = useState(initialForm);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const updateField = (field: keyof typeof form, value: string) => {
+    setForm((current) => ({ ...current, [field]: value }));
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const contactApiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL;
+
+    if (!contactApiUrl) {
+      setStatus("error");
+      setErrorMessage("Contact form is not configured. Missing NEXT_PUBLIC_CONTACT_API_URL.");
+      return;
+    }
+
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch(contactApiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+
+      setStatus("success");
+      setForm(initialForm);
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <section className="relative py-32 overflow-hidden" aria-labelledby="cta-heading">
-      {/* Background */}
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80"
@@ -17,7 +86,6 @@ export default function HomeConsultationCta() {
 
       <div className="relative max-w-[82rem] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        {/* Left content */}
         <div>
           <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#C09B5B] mb-5">
             Ready to Move Forward?
@@ -44,15 +112,14 @@ export default function HomeConsultationCta() {
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>
             <a
-              href="tel:+18005550100"
+              href="tel:+19739006754"
               className="inline-flex items-center gap-2 text-white/75 hover:text-white text-sm font-semibold tracking-wide transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M16.5 12.69a1.5 1.5 0 01-1.635 1.5 14.843 14.843 0 01-6.473-2.302A14.625 14.625 0 013.3 7.108a14.843 14.843 0 01-2.302-6.502A1.5 1.5 0 012.49 1H5.25a1.5 1.5 0 011.5 1.29c.095.72.27 1.427.524 2.107a1.5 1.5 0 01-.338 1.583l-1.162 1.162a12 12 0 004.597 4.597l1.162-1.162a1.5 1.5 0 011.583-.338c.68.255 1.387.43 2.108.524A1.5 1.5 0 0116.5 12.69z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              (800) 555-0100
+              +1 (973) 900-6754
             </a>
           </div>
 
-          {/* Trust indicators */}
           <div className="flex flex-col gap-3 pt-8 border-t border-white/12">
             {[
               "Complimentary initial consultation",
@@ -70,7 +137,6 @@ export default function HomeConsultationCta() {
           </div>
         </div>
 
-        {/* Right form */}
         <div className="bg-white rounded-lg p-10 shadow-2xl">
           <h3 className="font-serif text-[1.5rem] font-normal text-[#0B1F3A] tracking-[-0.02em] mb-2">
             Tell us about your matter
@@ -79,63 +145,115 @@ export default function HomeConsultationCta() {
             Complete the form and a member of our intake team will reach out to discuss your needs.
           </p>
 
-          <div className="grid grid-cols-2 gap-5">
-            {/* Full Name */}
+          {status === "success" && (
+            <div className="mb-6 border border-[#C09B5B]/35 bg-[#C09B5B]/10 p-4 rounded-sm">
+              <p className="text-sm font-semibold text-[#0B1F3A]">Your request has been sent.</p>
+              <p className="mt-1 text-xs leading-relaxed text-[#3D5470]">
+                Check your inbox for a confirmation email. Our team will follow up within one business day.
+              </p>
+            </div>
+          )}
+
+          {status === "error" && (
+            <div className="mb-6 border border-red-300 bg-red-50 p-4 rounded-sm">
+              <p className="text-sm font-semibold text-red-800">We couldn't send your request.</p>
+              <p className="mt-1 text-xs leading-relaxed text-red-700">
+                {errorMessage || "Please try again, or call us directly at +1 (973) 900-6754."}
+              </p>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-5">
             <div className="col-span-2 sm:col-span-1 flex flex-col gap-2">
               <label className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#0B1F3A]" htmlFor="cta-name">Full Name *</label>
-              <input id="cta-name" type="text" placeholder="Your full name" autoComplete="name"
-                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all" />
+              <input
+                id="cta-name"
+                type="text"
+                required
+                value={form.name}
+                onChange={(e) => updateField("name", e.target.value)}
+                placeholder="Your full name"
+                autoComplete="name"
+                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all"
+              />
             </div>
-            {/* Organization */}
+
             <div className="col-span-2 sm:col-span-1 flex flex-col gap-2">
               <label className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#0B1F3A]" htmlFor="cta-org">Organization</label>
-              <input id="cta-org" type="text" placeholder="Law firm or company" autoComplete="organization"
-                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all" />
+              <input
+                id="cta-org"
+                type="text"
+                value={form.organization}
+                onChange={(e) => updateField("organization", e.target.value)}
+                placeholder="Law firm or company"
+                autoComplete="organization"
+                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all"
+              />
             </div>
-            {/* Email */}
+
             <div className="col-span-2 sm:col-span-1 flex flex-col gap-2">
               <label className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#0B1F3A]" htmlFor="cta-email">Email Address *</label>
-              <input id="cta-email" type="email" placeholder="your@email.com" autoComplete="email"
-                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all" />
+              <input
+                id="cta-email"
+                type="email"
+                required
+                value={form.email}
+                onChange={(e) => updateField("email", e.target.value)}
+                placeholder="your@email.com"
+                autoComplete="email"
+                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all"
+              />
             </div>
-            {/* Phone */}
+
             <div className="col-span-2 sm:col-span-1 flex flex-col gap-2">
               <label className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#0B1F3A]" htmlFor="cta-phone">Phone Number</label>
-              <input id="cta-phone" type="tel" placeholder="(000) 000-0000" autoComplete="tel"
-                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all" />
+              <input
+                id="cta-phone"
+                type="tel"
+                value={form.phone}
+                onChange={(e) => updateField("phone", e.target.value)}
+                placeholder="(000) 000-0000"
+                autoComplete="tel"
+                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all"
+              />
             </div>
-            {/* Service */}
+
             <div className="col-span-2 flex flex-col gap-2">
               <label className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#0B1F3A]" htmlFor="cta-service">Service Required *</label>
-              <select id="cta-service" defaultValue=""
+              <select
+                id="cta-service"
+                required
+                value={form.reason}
+                onChange={(e) => updateField("reason", e.target.value)}
                 className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all appearance-none"
-                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236B82A0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 16px center" }}>
+                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236B82A0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 16px center" }}
+              >
                 <option value="" disabled>Select a service</option>
-                <option>IME &amp; PQME Network</option>
-                <option>Medical Record Review</option>
-                <option>Commercial Litigation Expert</option>
-                <option>Economic Damages Expert</option>
-                <option>AI Compliance &amp; Governance</option>
-                <option>Healthcare Compliance</option>
-                <option>Digital Forensics</option>
-                <option>Cybersecurity Forensics</option>
-                <option>Electronic Discovery Support</option>
-                <option>Other / Not Sure</option>
+                {serviceOptions.map((option) => (
+                  <option key={option} value={option}>{option}</option>
+                ))}
               </select>
             </div>
-            {/* Description */}
+
             <div className="col-span-2 flex flex-col gap-2">
               <label className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#0B1F3A]" htmlFor="cta-desc">Case Description</label>
-              <textarea id="cta-desc" rows={4} placeholder="Briefly describe your matter — jurisdiction, type of dispute, and expert needs."
-                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all resize-y min-h-[100px]" />
+              <textarea
+                id="cta-desc"
+                rows={4}
+                value={form.message}
+                onChange={(e) => updateField("message", e.target.value)}
+                placeholder="Briefly describe your matter — jurisdiction, type of dispute, and expert needs."
+                className="w-full bg-[#F5F6F8] border border-gray-200 rounded-sm px-4 py-3 text-sm text-[#0B1F3A] placeholder-[#9AAFC7] outline-none focus:border-[#0B1F3A] focus:ring-2 focus:ring-[#0B1F3A]/8 transition-all resize-y min-h-[100px]"
+              />
             </div>
-            {/* Submit */}
+
             <div className="col-span-2">
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-3 bg-[#0B1F3A] hover:bg-[#132D52] text-white text-[13px] font-semibold tracking-widest uppercase py-3.5 rounded-sm transition-colors"
+                disabled={status === "submitting"}
+                className="w-full flex items-center justify-center gap-3 bg-[#0B1F3A] hover:bg-[#132D52] text-white text-[13px] font-semibold tracking-widest uppercase py-3.5 rounded-sm transition-colors disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Submit Request
+                {status === "submitting" ? "Sending..." : "Submit Request"}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
               <p className="text-xs text-[#9AAFC7] text-center mt-3 leading-relaxed">
@@ -144,7 +262,7 @@ export default function HomeConsultationCta() {
                 We never share your case details with third parties.
               </p>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
