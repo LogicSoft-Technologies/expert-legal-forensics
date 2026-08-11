@@ -73,8 +73,16 @@ export default function ContactPage() {
     setStatus("submitting");
     setErrorMessage("");
 
+    const contactApiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL;
+
+    if (!contactApiUrl) {
+      setStatus("error");
+      setErrorMessage("Contact form is not configured. Missing NEXT_PUBLIC_CONTACT_API_URL.");
+      return;
+    }
+
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(contactApiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
