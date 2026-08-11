@@ -116,7 +116,7 @@ export default function ContactPage() {
         <div className="relative mx-auto grid min-h-[560px] max-w-[1320px] items-center gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[1fr_380px] lg:px-10 xl:px-12">
           <div className="max-w-[830px]">
             <p className="mb-5 text-[11px] font-black uppercase tracking-[0.2em] text-[#C09B5B]">
-              Contact
+              Contact Expert Legal &amp; Forensics
             </p>
 
             <h1
