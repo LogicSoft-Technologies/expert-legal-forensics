@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Corporate Organizations | Expert Legal Network",
-  description:
-    "Expert, forensic, compliance, investigation, and advisory support for corporate legal departments, risk teams, insurers, and organizations.",
-};
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import { ROUTES_CONFIG } from "@/lib/seo/routes.config";
+
+export const metadata = generatePageMetadata({
+  ...ROUTES_CONFIG["/industries/corporate"],
+  path: "/industries/corporate",
+});
 
 const services = [
   {

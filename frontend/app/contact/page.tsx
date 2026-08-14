@@ -1,6 +1,8 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
+import { SITE_CONFIG } from "@/lib/seo/config";
 
 const contactReasons = [
   "Expert witness placement",
@@ -37,6 +39,7 @@ const officeDetails = [
   },
   { label: "Response", value: "Within one business day", href: null },
   { label: "Availability", value: "Nationwide matters", href: null },
+  { label: "LinkedIn", value: "Experts Legal Institute", href: SITE_CONFIG.social.linkedin },
 ];
 
 const intakeChecklist = [
@@ -164,12 +167,14 @@ export default function ContactPage() {
                       {item.label}
                     </p>
                     {item.href ? (
-                      <a
+                      <Link
                         href={item.href}
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="mt-1 block text-[14px] font-semibold text-[#0B1F3A] transition hover:text-[#C09B5B]"
                       >
                         {item.value}
-                      </a>
+                      </Link>
                     ) : (
                       <p className="mt-1 text-[14px] font-semibold text-[#0B1F3A]">
                         {item.value}

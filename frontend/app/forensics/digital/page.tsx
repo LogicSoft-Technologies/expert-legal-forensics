@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Digital Forensics | Expert Legal Network",
-  description:
-    "Court-ready digital forensics support for electronic evidence preservation, device analysis, metadata review, and expert reporting.",
-};
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import { ROUTES_CONFIG } from "@/lib/seo/routes.config";
+
+export const metadata = generatePageMetadata({
+  ...ROUTES_CONFIG["/forensics/digital"],
+  path: "/forensics/digital",
+});
 
 const capabilities = [
   {

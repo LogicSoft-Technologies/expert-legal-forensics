@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Technology Industry | Expert Legal Network",
-  description:
-    "Technology expert witness, AI governance, cybersecurity forensics, software dispute, data investigation, and technical litigation support.",
-};
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import { ROUTES_CONFIG } from "@/lib/seo/routes.config";
+
+export const metadata = generatePageMetadata({
+  ...ROUTES_CONFIG["/industries/technology"],
+  path: "/industries/technology",
+});
 
 const services = [
   {
@@ -230,7 +232,7 @@ export default function TechnologyIndustryPage() {
         <div className="mx-auto max-w-[1320px] px-6 sm:px-8 lg:px-10 xl:px-12">
           <div className="mb-12 max-w-[820px]">
             <p className="mb-4 text-[11px] font-black uppercase tracking-[0.18em] text-[#C09B5B]">
-              Process
+              Specialized Process
             </p>
             <h2 className="font-serif text-[clamp(2rem,3.3vw,3.15rem)] font-light leading-[1.12] text-white">
               Technical review with legal and operational clarity.

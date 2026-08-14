@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Data Investigation | Expert Legal Network",
-  description:
-    "Data investigation support for eDiscovery, metadata analysis, document authentication, trade secret matters, and electronic record review.",
-};
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import { ROUTES_CONFIG } from "@/lib/seo/routes.config";
+
+export const metadata = generatePageMetadata({
+  ...ROUTES_CONFIG["/forensics/data-investigation"],
+  path: "/forensics/data-investigation",
+});
 
 const capabilities = [
   {

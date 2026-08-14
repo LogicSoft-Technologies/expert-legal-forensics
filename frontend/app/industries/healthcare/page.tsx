@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Healthcare Industry | Expert Legal Network",
-  description:
-    "Healthcare expert witness, compliance, medical review, and forensic support for providers, payers, counsel, and healthcare organizations.",
-};
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import { ROUTES_CONFIG } from "@/lib/seo/routes.config";
+
+export const metadata = generatePageMetadata({
+  ...ROUTES_CONFIG["/industries/healthcare"],
+  path: "/industries/healthcare",
+});
 
 const services = [
   {

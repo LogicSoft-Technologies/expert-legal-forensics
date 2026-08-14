@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import { ROUTES_CONFIG } from "@/lib/seo/routes.config";
+
+export const metadata = generatePageMetadata({
+  ...ROUTES_CONFIG["/about"],
+  path: "/about",
+});
+
 const metrics = [
   { value: "3,200+", label: "Matters supported" },
   { value: "500+", label: "Qualified experts" },
@@ -101,10 +109,7 @@ export default function AboutPage() {
 
         <div className="relative mx-auto grid min-h-[620px] max-w-[1320px] items-center px-6 py-20 sm:px-8 lg:grid-cols-[1fr_360px] lg:px-10 xl:px-12">
           <div className="max-w-[850px]">
-            <p className="mb-5 text-[11px] font-black uppercase tracking-[0.22em] text-[#C09B5B]">
-              About Expert Legal &amp; Forensics
-            </p>
-
+      
             <h1
               className="font-serif font-light leading-[1.02] tracking-[-0.01em] text-white"
               style={{ fontSize: "clamp(2.8rem, 5.3vw, 5.8rem)" }}

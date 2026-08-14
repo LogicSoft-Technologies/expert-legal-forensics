@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import { ROUTES_CONFIG } from "@/lib/seo/routes.config";
+
+export const metadata = generatePageMetadata({
+  ...ROUTES_CONFIG["/insights"],
+  path: "/insights",
+});
+
 const featured = {
   category: "Expert Witness",
   title: "How Legal Teams Should Evaluate Expert Witness Fit Before Engagement",

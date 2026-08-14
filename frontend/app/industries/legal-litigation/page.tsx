@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Legal & Litigation | Expert Legal Network",
-  description:
-    "Expert witness, forensic, medical review, damages, and litigation support for law firms and trial teams handling complex matters.",
-};
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import { ROUTES_CONFIG } from "@/lib/seo/routes.config";
+
+export const metadata = generatePageMetadata({
+  ...ROUTES_CONFIG["/industries/legal-litigation"],
+  path: "/industries/legal-litigation",
+});
 
 const services = [
   {
