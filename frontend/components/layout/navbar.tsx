@@ -143,7 +143,7 @@ export default function Navbar() {
 
             <span className="block min-w-0 leading-none">
               <span className="block font-heading text-[0.78rem] font-semibold leading-tight tracking-wide text-[#0B1F3A] uppercase sm:text-[1.1rem]">
-                Experts Legal
+                Expert Legal
               </span>
               <span className="block font-heading text-[0.95rem] font-bold leading-tight tracking-[0.04em] text-[#C09B5B] uppercase sm:text-[1.35rem] sm:tracking-[0.05em]">
                 Institute

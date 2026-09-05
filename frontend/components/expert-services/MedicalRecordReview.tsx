@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const deliverables = [
   { title: "Chronological Summaries", body: "Clear, date-ordered medical chronologies that organize years of records into a format counsel can read in minutes." },
-  { title: "Injury Causation Analysis", body: "Expert opinions linking documented medical evidence to alleged incidents — identifying gaps, inconsistencies, and supporting findings." },
+  { title: "Injury Causation Analysis", body: "Expert opinions linking documented medical evidence to alleged incidents identifying gaps, inconsistencies, and supporting findings." },
   { title: "Treatment Necessity Review", body: "Evaluation of whether past, current, and proposed treatments are medically necessary and consistent with the standard of care." },
   { title: "Prognosis & Future Care", body: "Life care cost projections and future medical need assessments authored by licensed clinicians, suitable for damages calculations." },
   { title: "Peer Review Letters", body: "Physician-authored letters for insurance and litigation use, reviewing treating records against applicable clinical guidelines." },
@@ -22,16 +22,16 @@ const useCases = [
 ];
 
 const benefits = [
-  { title: "Physician-authored, every time", body: "Every review is completed by a licensed, board-certified physician — not support staff or paralegals summarizing records. Our reviewers are active clinicians applying current clinical standards." },
+  { title: "Physician-authored, every time", body: "Every review is completed by a licensed, board-certified physician not support staff or paralegals summarizing records. Our reviewers are active clinicians applying current clinical standards." },
   { title: "HIPAA-compliant chain of custody", body: "All records are handled through encrypted, HIPAA-compliant transmission protocols with documented chain-of-custody tracking suitable for litigation." },
-  { title: "Specialty-matched reviewers", body: "We assign reviewers based on the clinical specialty relevant to your case — not just whoever is available. An orthopedic injury gets an orthopedic reviewer." },
-  { title: "Consistent, court-ready format", body: "Reports follow a consistent format attorneys and adjusters know how to use — with clear section headings, opinion statements, and supporting citations to the record." },
+  { title: "Specialty-matched reviewers", body: "We assign reviewers based on the clinical specialty relevant to your case not just whoever is available. An orthopedic injury gets an orthopedic reviewer." },
+  { title: "Consistent, court-ready format", body: "Reports follow a consistent format attorneys and adjusters know how to use with clear section headings, opinion statements, and supporting citations to the record." },
   { title: "Expedited 24-hour turnaround", body: "For urgent matters, expedited review is available with 24-hour turnaround on standard record volumes. Contact our intake team to confirm availability." },
   { title: "Supplemental opinions on request", body: "If new records are produced in discovery or a treating physician issues an updated report, we can engage the reviewer for a supplemental opinion without re-engaging the full intake process." },
 ];
 
 const faqs = [
-  { q: "Who actually reviews the records — a physician or a paralegal?", a: "Every medical record review we produce is authored by a licensed, board-certified physician or specialist in the relevant clinical field. We do not use paralegals, nurses, or support staff as the primary reviewer. If a nurse case manager or life care planner is involved in a specific deliverable, that role is clearly identified in the report." },
+  { q: "Who actually reviews the records a physician or a paralegal?", a: "Every medical record review we produce is authored by a licensed, board-certified physician or specialist in the relevant clinical field. We do not use paralegals, nurses, or support staff as the primary reviewer. If a nurse case manager or life care planner is involved in a specific deliverable, that role is clearly identified in the report." },
   { q: "What volume of records can you handle?", a: "We have handled single-matter engagements ranging from a few hundred pages to over 100,000 pages across mass tort portfolios. For high-volume matters, we can deploy a review team and provide rolling deliverables on an agreed schedule rather than waiting for completion of the entire record set." },
   { q: "Can the reviewing physician testify as an expert witness?", a: "Yes. Many of our reviewing physicians are also available for deposition and trial testimony. If you anticipate needing testimony, inform us at intake so we can confirm the reviewer's availability and willingness to testify before assigning them to your matter." },
   { q: "How do you handle confidentiality and HIPAA compliance?", a: "All records are transmitted through encrypted, HIPAA-compliant file transfer protocols. We maintain Business Associate Agreements with all reviewing physicians and operate under documented data handling policies. Chain-of-custody documentation is available for all engagements upon request." },
@@ -63,7 +63,7 @@ export default function MedicalRecordReview() {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-[#F5F6F8]">
-        <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
         <div className="absolute left-0 top-0 h-full w-[3px] bg-[#C09B5B]" />
         <div className="mx-auto grid max-w-[1320px] grid-cols-1 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="flex flex-col justify-center px-6 py-20 sm:px-8 sm:py-24 lg:px-10 xl:px-12 lg:py-32">
@@ -94,7 +94,7 @@ export default function MedicalRecordReview() {
             </div>
           </div>
           <div className="relative hidden min-h-[520px] lg:block">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&q=85" alt="Medical record review" className="absolute inset-0 h-full w-full object-cover object-center" />
+            <img src="https://images.unsplash.com/photo-1599045118108-bf9954418b76?q=80" alt="Medical record review" className="absolute inset-0 h-full w-full object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#F5F6F8]/20 to-transparent" />
           </div>
         </div>
@@ -189,7 +189,7 @@ export default function MedicalRecordReview() {
             <div>
               <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-[#C09B5B]">Stay Informed</p>
               <h2 className="font-light text-[clamp(1.75rem,2.5vw,2.25rem)] leading-tight tracking-[-0.01em] text-white">Medical-legal insights, direct to your inbox</h2>
-              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">Updates on medical record review standards, causation opinion jurisprudence, IME best practices, and expert witness developments — for litigators, adjusters, and risk counsel.</p>
+              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">Updates on medical record review standards, causation opinion jurisprudence, IME best practices, and expert witness developments  for litigators, adjusters, and risk counsel.</p>
             </div>
             <div>
               {subscribed ? (

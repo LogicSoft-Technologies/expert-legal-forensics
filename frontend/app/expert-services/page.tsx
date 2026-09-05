@@ -15,7 +15,7 @@ const services = [
     href: "/expert-services/ime-pqme-network",
     category: "Medical Evaluation",
     description:
-      "Access board-certified independent medical evaluators and qualified medical evaluators across all major specialties — matched to your jurisdiction, case type, and timeline.",
+      "Access board-certified independent medical evaluators and qualified medical evaluators across all major specialties matched to your jurisdiction, case type, and timeline.",
     capabilities: [
       "Orthopedic, neurology, psychiatry & more",
       "48-hour average placement",
@@ -238,15 +238,15 @@ export default function ExpertServicesPage() {
                 Intake to placement in under 48 hours
               </h2>
               <p className="text-[15px] leading-[1.9] text-[#6B82A0]">
-                Submit your case details through our intake form or by phone. Our placement team reviews the matter, identifies qualified candidates, and presents a curated shortlist — typically the same business day. We handle scheduling, conflict screening, and document logistics so you can focus on the case.
+                Submit your case details through our intake form or by phone. Our placement team reviews the matter, identifies qualified candidates, and presents a curated shortlist typically the same business day. We handle scheduling, conflict screening, and document logistics so you can focus on the case.
               </p>
               <p className="mt-5 text-[15px] leading-[1.9] text-[#6B82A0]">
-                Every expert we recommend has been independently credentialed and screened for conflicts. We maintain ongoing relationships with our network — so our recommendations reflect current availability and recent testimony performance, not just a directory search.
+                Every expert we recommend has been independently credentialed and screened for conflicts. We maintain ongoing relationships with our network so our recommendations reflect current availability and recent testimony performance, not just a directory search.
               </p>
             </div>
             <div className="flex flex-col justify-center gap-px bg-[#E5EAF1]">
               {[
-                { step: "Submit intake", detail: "Case type, jurisdiction, and timeline — online or by phone." },
+                { step: "Submit intake", detail: "Case type, jurisdiction, and timeline online or by phone." },
                 { step: "Expert matching", detail: "We identify qualified, conflict-free candidates within hours." },
                 { step: "Confirm & schedule", detail: "You select from our shortlist. We handle scheduling and onboarding." },
                 { step: "Ongoing support", detail: "Report delivery, deposition prep, and trial coordination included." },

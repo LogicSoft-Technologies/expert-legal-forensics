@@ -13,28 +13,28 @@ const evaluatorTypes = [
 ];
 
 const process = [
-  { step: "01", title: "Intake & Matching", body: "Submit your case details. We identify specialty-matched evaluators based on injury type, jurisdiction, and scheduling needs — typically within 24 hours." },
+  { step: "01", title: "Intake & Matching", body: "Submit your case details. We identify specialty-matched evaluators based on injury type, jurisdiction, and scheduling needs typically within 24 hours." },
   { step: "02", title: "Evaluator Confirmation", body: "We verify credentials, confirm board certifications, and ensure the evaluator carries no conflicts of interest before scheduling." },
-  { step: "03", title: "Evaluation & Report", body: "The evaluation proceeds. Reports are delivered on agreed timelines — expedited options available for urgent matters." },
+  { step: "03", title: "Evaluation & Report", body: "The evaluation proceeds. Reports are delivered on agreed timelines expedited options available for urgent matters." },
   { step: "04", title: "Testimony Support", body: "When depositions or trial testimony are required, we coordinate scheduling and deposition prep with your evaluator." },
 ];
 
 const benefits = [
-  { title: "Jurisdiction-matched placement", body: "We match evaluators who are licensed, credentialed, and familiar with local workers' compensation boards and state-specific PQME requirements — not just the nearest available physician." },
-  { title: "Conflict-of-interest screening included", body: "Every evaluator is screened against your claimant, treating physicians, and opposing counsel before placement. Conflicts are disclosed proactively — never discovered at deposition." },
+  { title: "Jurisdiction-matched placement", body: "We match evaluators who are licensed, credentialed, and familiar with local workers' compensation boards and state-specific PQME requirements not just the nearest available physician." },
+  { title: "Conflict-of-interest screening included", body: "Every evaluator is screened against your claimant, treating physicians, and opposing counsel before placement. Conflicts are disclosed proactively never discovered at deposition." },
   { title: "One point of contact, start to finish", body: "Your assigned placement coordinator manages the entire engagement from initial matching through report delivery and deposition scheduling. You are never passed between departments." },
-  { title: "Expedited placements available", body: "For matters with approaching deadlines, we maintain a network of evaluators available for accelerated timelines — without compromising credential quality." },
+  { title: "Expedited placements available", body: "For matters with approaching deadlines, we maintain a network of evaluators available for accelerated timelines without compromising credential quality." },
   { title: "Report quality guarantee", body: "If a delivered report does not address the referral questions in a manner suitable for submission, we will arrange a supplemental addendum at no additional cost." },
-  { title: "National reach, local precision", body: "With evaluators in all 50 states, we can place board-certified specialists in major and secondary markets alike — with advice on jurisdiction-specific evaluation requirements." },
+  { title: "National reach, local precision", body: "With evaluators in all 50 states, we can place board-certified specialists in major and secondary markets alike with advice on jurisdiction-specific evaluation requirements." },
 ];
 
 const faqs = [
-  { q: "What is the difference between an IME and a PQME?", a: "An Independent Medical Evaluation (IME) is used broadly in personal injury, disability, and insurance contexts to obtain an objective medical opinion. A Qualified Medical Evaluator (QME) or Panel Qualified Medical Evaluator (PQME) is a California-specific DWC designation — these evaluators hold specific certifications and are subject to additional regulatory requirements around scheduling, reporting format, and party communications." },
-  { q: "How quickly can you place an evaluator?", a: "In most major markets, we confirm a credentialed evaluator within 24–48 hours of intake. For specialty-specific requests in secondary markets, allow 3–5 business days. Expedited placement is available for urgent matters — contact our intake team to discuss your timeline." },
-  { q: "Do you handle scheduling logistics?", a: "Yes. Once you confirm a placement, our team handles all coordination with the evaluator's office — appointment confirmation, records transmission, and calendar management. You receive confirmation with all logistical details and do not need to contact the evaluator's office directly." },
+  { q: "What is the difference between an IME and a PQME?", a: "An Independent Medical Evaluation (IME) is used broadly in personal injury, disability, and insurance contexts to obtain an objective medical opinion. A Qualified Medical Evaluator (QME) or Panel Qualified Medical Evaluator (PQME) is a California-specific DWC designation these evaluators hold specific certifications and are subject to additional regulatory requirements around scheduling, reporting format, and party communications." },
+  { q: "How quickly can you place an evaluator?", a: "In most major markets, we confirm a credentialed evaluator within 24–48 hours of intake. For specialty-specific requests in secondary markets, allow 3–5 business days. Expedited placement is available for urgent matters contact our intake team to discuss your timeline." },
+  { q: "Do you handle scheduling logistics?", a: "Yes. Once you confirm a placement, our team handles all coordination with the evaluator's office appointment confirmation, records transmission, and calendar management. You receive confirmation with all logistical details and do not need to contact the evaluator's office directly." },
   { q: "Can the evaluator testify at deposition or trial?", a: "All evaluators in our network are available for deposition and trial testimony as part of their engagement. We coordinate scheduling for testimony appearances and can facilitate pre-deposition preparation sessions between counsel and the evaluator upon request." },
   { q: "What if I need an evaluation in a state with strict panel requirements?", a: "We are well-versed in state-specific panel requirements including California PQME panel selection rules, and can advise on proper procedures to ensure your evaluation is not subject to procedural challenge." },
-  { q: "How are evaluators vetted for bias or prior adverse credibility findings?", a: "Our vetting process includes review of prior published opinions, known adverse credibility rulings, Daubert challenge history, and any DWC disciplinary history where applicable. We do not recommend evaluators with undisclosed adverse history — and where a prior finding exists, we disclose it before placement." },
+  { q: "How are evaluators vetted for bias or prior adverse credibility findings?", a: "Our vetting process includes review of prior published opinions, known adverse credibility rulings, Daubert challenge history, and any DWC disciplinary history where applicable. We do not recommend evaluators with undisclosed adverse history and where a prior finding exists, we disclose it before placement." },
 ];
 
 function FAQItem({ q, a }: { q: string; a: string }) {
@@ -61,7 +61,7 @@ export default function IMEPQMENetwork() {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-[#F5F6F8]">
-        <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
         <div className="absolute left-0 top-0 h-full w-[3px] bg-[#C09B5B]" />
         <div className="mx-auto grid max-w-[1320px] grid-cols-1 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="flex flex-col justify-center px-6 py-20 sm:px-8 sm:py-24 lg:px-10 xl:px-12 lg:py-32">
@@ -72,7 +72,7 @@ export default function IMEPQMENetwork() {
             </h1>
             <div className="mt-8 h-px w-14 bg-[#C09B5B]/40" />
             <p className="mt-6 max-w-[560px] text-[15px] leading-[1.8] text-[#6B82A0] sm:text-base">
-              Board-certified independent medical evaluators and qualified medical evaluators across all major specialties — matched to your jurisdiction, case type, and timeline.
+              Board-certified independent medical evaluators and qualified medical evaluators across all major specialties matched to your jurisdiction, case type, and timeline.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link href="/contact" className="inline-flex h-[50px] items-center justify-center bg-[#0B1F3A] px-7 text-[11px] font-black uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#C09B5B] sm:px-9">
@@ -184,7 +184,7 @@ export default function IMEPQMENetwork() {
             <div>
               <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-[#C09B5B]">Stay Informed</p>
               <h2 className="font-light text-[clamp(1.75rem,2.5vw,2.25rem)] leading-tight tracking-[-0.01em] text-white">IME &amp; PQME insights, direct to your inbox</h2>
-              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">Updates on PQME panel reforms, workers' compensation developments, evaluator credentialing standards, and expert witness best practices — for attorneys, adjusters, and risk managers.</p>
+              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">Updates on PQME panel reforms, workers' compensation developments, evaluator credentialing standards, and expert witness best practices for attorneys, adjusters, and risk managers.</p>
             </div>
             <div>
               {subscribed ? (
