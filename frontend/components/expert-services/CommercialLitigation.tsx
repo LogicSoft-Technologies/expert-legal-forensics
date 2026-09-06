@@ -24,19 +24,19 @@ const industries = [
 ];
 
 const benefits = [
-  { title: "Sector-specific depth, not generalists", body: "We match your matter to experts who have operated inside the industry at issue — not academics who study it. A SaaS contract dispute gets a SaaS operator. A construction defect claim gets a licensed engineer with field experience." },
+  { title: "Sector-specific depth, not generalists", body: "We match your matter to experts who have operated inside the industry at issue not academics who study it. A SaaS contract dispute gets a SaaS operator. A construction defect claim gets a licensed engineer with field experience." },
   { title: "Daubert-ready credentials", body: "Every expert we recommend has been reviewed for prior Daubert and Frye challenge history. We disclose any prior exclusions before placement and only recommend experts whose methodology is court-tested and defensible." },
-  { title: "Rebuttal expert capability", body: "When opposing counsel designates an expert, we can rapidly identify and place a qualified rebuttal expert — reviewing their report, identifying methodological weaknesses, and authoring a competing opinion." },
-  { title: "Conflict screening before recommendation", body: "We screen every candidate against the parties, counsel, and related entities before presenting a recommendation. You receive a clean expert — not one who worked for the opposing firm three years ago." },
+  { title: "Rebuttal expert capability", body: "When opposing counsel designates an expert, we can rapidly identify and place a qualified rebuttal expert reviewing their report, identifying methodological weaknesses, and authoring a competing opinion." },
+  { title: "Conflict screening before recommendation", body: "We screen every candidate against the parties, counsel, and related entities before presenting a recommendation. You receive a clean expert not one who worked for the opposing firm three years ago." },
   { title: "Deposition and trial-tested", body: "Every expert we place has prior deposition experience. For trial testimony, we can facilitate preparation sessions between your trial team and the expert well in advance of the hearing." },
   { title: "Rapid turnaround on report deadlines", body: "Commercial litigation moves fast. We can identify and confirm an expert within 24 hours of intake, and can work with experts to meet accelerated report production schedules when court-imposed deadlines are tight." },
 ];
 
 const faqs = [
-  { q: "What types of commercial disputes do your experts typically handle?", a: "Our commercial litigation experts cover the full spectrum of business disputes — breach of contract, business valuation, partnership and shareholder disputes, intellectual property infringement, fraud and financial crime, employment and wage disputes, construction defect, and regulatory enforcement matters. If your matter involves a business loss or commercial claim, we have experts who have worked in that context." },
+  { q: "What types of commercial disputes do your experts typically handle?", a: "Our commercial litigation experts cover the full spectrum of business disputes breach of contract, business valuation, partnership and shareholder disputes, intellectual property infringement, fraud and financial crime, employment and wage disputes, construction defect, and regulatory enforcement matters. If your matter involves a business loss or commercial claim, we have experts who have worked in that context." },
   { q: "How do you ensure an expert can survive a Daubert challenge?", a: "Before recommending any expert, we review their prior testimony record, published reports, and any known Daubert or Frye challenge history. We only place experts whose methodology is grounded in accepted professional standards and who have demonstrated the ability to defend their opinions under cross-examination. Where a prior challenge exists, we disclose it fully and assess whether it materially affects reliability for your specific matter." },
   { q: "Can you place a rebuttal expert after opposing counsel has designated theirs?", a: "Yes, and this is a significant part of our practice. When you receive an opposing expert report, we can rapidly identify a qualified rebuttal expert, facilitate their review of the opposing report, and support the drafting of a responsive opinion. We can typically confirm a rebuttal expert within 24–48 hours of receiving the opposing report." },
-  { q: "Do your experts have experience with specific industry standards and customs?", a: "Yes. We specifically seek experts who have operated as practitioners within the relevant industry — not just academics or consultants who study it. An expert on software development contract disputes should have built and shipped software. An expert on banking practices should have worked inside a bank. That practitioner credibility makes a material difference in how juries and judges receive their testimony." },
+  { q: "Do your experts have experience with specific industry standards and customs?", a: "Yes. We specifically seek experts who have operated as practitioners within the relevant industry not just academics or consultants who study it. An expert on software development contract disputes should have built and shipped software. An expert on banking practices should have worked inside a bank. That practitioner credibility makes a material difference in how juries and judges receive their testimony." },
   { q: "What if I need an expert for an international commercial arbitration?", a: "We have placed experts in ICC, AAA, JAMS, and LCIA arbitration proceedings. International commercial arbitration often requires experts who are familiar with the applicable procedural rules around expert testimony, including the IBA Rules on the Taking of Evidence. Inform our intake team of the arbitral forum and seat at the outset." },
   { q: "How are expert fees structured?", a: "Expert fees vary by discipline, experience level, and engagement scope. We can provide a fee range estimate at intake and will confirm the expert's hourly rate and estimated engagement cost before you confirm the placement. We do not mark up expert fees — our fee is a separate placement and coordination fee disclosed transparently." },
 ];
@@ -65,7 +65,7 @@ export default function CommercialLitigation() {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-[#F5F6F8]">
-        <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
         <div className="absolute left-0 top-0 h-full w-[3px] bg-[#C09B5B]" />
         <div className="mx-auto grid max-w-[1320px] grid-cols-1 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="flex flex-col justify-center px-6 py-20 sm:px-8 sm:py-24 lg:px-10 xl:px-12 lg:py-32">
@@ -190,7 +190,7 @@ export default function CommercialLitigation() {
             <div>
               <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-[#C09B5B]">Stay Informed</p>
               <h2 className="font-light text-[clamp(1.75rem,2.5vw,2.25rem)] leading-tight tracking-[-0.01em] text-white">Commercial litigation insights, direct to your inbox</h2>
-              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">Daubert developments, expert witness case law, industry-specific dispute trends, and valuation methodology updates — for trial counsel, in-house legal teams, and commercial litigators.</p>
+              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">Daubert developments, expert witness case law, industry-specific dispute trends, and valuation methodology updates for trial counsel, in-house legal teams, and commercial litigators.</p>
             </div>
             <div>
               {subscribed ? (
