@@ -27,7 +27,7 @@ const pillars = [
       </svg>
     ),
     body1:
-      "Expert Legal & Forensics acts as an extension of your legal team - not a vendor you manage. From intake through trial, our process ensures every engagement is coordinated, documented, and responsive.",
+      "Expert Legal & Forensics acts as an extension of your legal team, not a vendor you manage. From intake through trial, our process ensures every engagement is coordinated, documented, and responsive.",
     body2:
       "Our consulting teams work directly alongside your attorneys to develop a case narrative grounded in defensible evidence, anticipate opposing expert challenges, and prepare compelling, accessible testimony.",
     cta: { label: "Our Process", href: "/about#process" },

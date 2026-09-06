@@ -126,7 +126,8 @@ export default function CybersecurityForensicsPage() {
               className="font-serif font-light leading-[1.03] tracking-[-0.01em] text-white"
               style={{ fontSize: "clamp(2.7rem,5vw,5.35rem)" }}
             >
-              Incident investigation and breach reconstruction for high-stakes matters.
+              Incident investigation and breach reconstruction for high-stakes
+              matters.
             </h1>
 
             <p className="mt-7 max-w-[700px] text-[16px] leading-[1.85] text-white/65">
@@ -162,7 +163,10 @@ export default function CybersecurityForensicsPage() {
                 ["Logs", "Event and access reconstruction"],
                 ["Response", "Legal-ready findings"],
               ].map(([value, label]) => (
-                <div key={label} className="border-t border-white/10 pt-5 first:border-t-0 first:pt-0">
+                <div
+                  key={label}
+                  className="border-t border-white/10 pt-5 first:border-t-0 first:pt-0"
+                >
                   <p className="font-serif text-[1.65rem] font-light leading-none text-white">
                     {value}
                   </p>
@@ -195,7 +199,7 @@ export default function CybersecurityForensicsPage() {
               investigation that explains what happened and why.
             </p>
             <p>
-              Our cybersecurity forensic work helps identify root cause, scope
+              Our cybersecurity forensic work helps identify root cause, map
               affected systems, evaluate available evidence of data exposure,
               and organize findings for legal, regulatory, operational, or
               insurance use.
@@ -217,7 +221,10 @@ export default function CybersecurityForensicsPage() {
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((item) => (
-              <article key={item.title} className="border border-[#E1E6EF] bg-white p-6 sm:p-7">
+              <article
+                key={item.title}
+                className="border border-[#E1E6EF] bg-white p-6 sm:p-7"
+              >
                 <div className="mb-5 h-px w-10 bg-[#C09B5B]" />
                 <h3 className="font-serif text-[1.45rem] font-light leading-snug text-[#0B1F3A]">
                   {item.title}
@@ -244,7 +251,10 @@ export default function CybersecurityForensicsPage() {
 
           <div className="grid gap-3 sm:grid-cols-2">
             {useCases.map((item) => (
-              <div key={item} className="flex items-start gap-3 border border-[#E5EAF1] bg-[#F7F9FC] px-4 py-3 text-[13.5px] leading-snug text-[#3D5470]">
+              <div
+                key={item}
+                className="flex items-start gap-3 border border-[#E5EAF1] bg-[#F7F9FC] px-4 py-3 text-[13.5px] leading-snug text-[#3D5470]"
+              >
                 <span className="mt-[6px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#C09B5B]" />
                 <span>{item}</span>
               </div>
@@ -266,7 +276,10 @@ export default function CybersecurityForensicsPage() {
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {process.map((item) => (
-              <article key={item.step} className="border border-white/[0.08] bg-white/[0.035] p-6">
+              <article
+                key={item.step}
+                className="border border-white/[0.08] bg-white/[0.035] p-6"
+              >
                 <span className="text-[11px] font-black tracking-[0.18em] text-[#C09B5B]">
                   {item.step}
                 </span>
