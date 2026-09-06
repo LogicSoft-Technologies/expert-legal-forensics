@@ -20,7 +20,7 @@ const industries = [
   {
     title: "Technology",
     href: "/industries/technology",
-    description: "Technology disputes — from software IP claims to AI liability to cybersecurity breaches — require experts who understand both technical and legal dimensions. Our technology practice covers digital forensics, source code analysis, and AI governance.",
+    description: "Technology disputes from software IP claims to AI liability to cybersecurity breaches require experts who understand both technical and legal dimensions. Our technology practice covers digital forensics, source code analysis, and AI governance.",
     stat: { value: "350+", label: "Technology Cases" },
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=700&q=80",
     accentColor: "bg-[#C09B5B]",
@@ -49,7 +49,7 @@ export default function HomeIndustries() {
           <p className="text-[1.0625rem] text-[#3D5470] leading-[1.75] max-w-[580px]">
             Litigation support is not one-size-fits-all. Each industry carries its own regulatory
             environment, terminology, and evidentiary standards. Our practice is organized around
-            the industries we serve — not just the services we offer.
+            the industries we serve not just the services we offer.
           </p>
         </div>
 

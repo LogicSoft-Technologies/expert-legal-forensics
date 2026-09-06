@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 
 const serviceAreas = [
-  { title: "AI Risk Assessment", body: "Structured evaluation of your AI systems against applicable regulatory frameworks — EU AI Act, NIST AI RMF, and sector-specific guidance." },
+  { title: "AI Risk Assessment", body: "Structured evaluation of your AI systems against applicable regulatory frameworks EU AI Act, NIST AI RMF, and sector-specific guidance." },
   { title: "Governance Framework Design", body: "Policy, process, and organizational design to establish accountable AI governance that satisfies board, regulator, and audit requirements." },
   { title: "Litigation Expert Opinions", body: "Authoritative opinions on AI system behavior, algorithmic decision-making, and whether outputs met applicable standards of care." },
-  { title: "Bias & Fairness Auditing", body: "Technical audits evaluating AI model outputs for discriminatory patterns — required in EEOC, CFPB, and fair housing regulatory proceedings." },
-  { title: "Vendor & Procurement Review", body: "Independent assessment of third-party AI tools before enterprise deployment — covering data privacy, contractual risk, and compliance posture." },
+  { title: "Bias & Fairness Auditing", body: "Technical audits evaluating AI model outputs for discriminatory patterns required in EEOC, CFPB, and fair housing regulatory proceedings." },
+  { title: "Vendor & Procurement Review", body: "Independent assessment of third-party AI tools before enterprise deployment covering data privacy, contractual risk, and compliance posture." },
   { title: "Incident Response Support", body: "Expert consultation for AI-related incidents including algorithmic harm events, data breaches, and regulatory investigations." },
 ];
 
@@ -22,20 +22,20 @@ const regulatoryAreas = [
 ];
 
 const benefits = [
-  { title: "Technical depth meets legal credibility", body: "Our AI experts hold advanced degrees in machine learning and computer science and have direct experience as expert witnesses — bridging the gap between technical accuracy and courtroom persuasiveness." },
+  { title: "Technical depth meets legal credibility", body: "Our AI experts hold advanced degrees in machine learning and computer science and have direct experience as expert witnesses bridging the gap between technical accuracy and courtroom persuasiveness." },
   { title: "Regulatory insider knowledge", body: "Our roster includes former FTC, CFPB, and EEOC technologists who have authored AI policy guidance from inside the agencies that now enforce it. That perspective is invaluable in regulatory defense." },
-  { title: "Framework-agnostic assessment", body: "We assess AI systems against whichever framework applies to your situation — EU AI Act, NIST RMF, sector-specific guidance, or emerging state-level rules — without bias toward any particular compliance product." },
-  { title: "Pre-litigation risk identification", body: "Beyond litigation support, we engage proactively to identify AI liability exposure before it becomes a lawsuit — reviewing governance structures, model documentation, and incident response readiness." },
+  { title: "Framework-agnostic assessment", body: "We assess AI systems against whichever framework applies to your situation EU AI Act, NIST RMF, sector-specific guidance, or emerging state-level rules without bias toward any particular compliance product." },
+  { title: "Pre-litigation risk identification", body: "Beyond litigation support, we engage proactively to identify AI liability exposure before it becomes a lawsuit reviewing governance structures, model documentation, and incident response readiness." },
   { title: "Bias audit documentation for regulatory defense", body: "For organizations facing EEOC, CFPB, or HUD investigations related to algorithmic decision-making, we produce bias audit documentation that meets regulatory evidentiary standards." },
   { title: "Rapid deployment for emerging matters", body: "AI-related litigation moves quickly and often involves novel legal theories. Our placement team can identify and confirm an AI expert within 24 hours of intake for urgent matters." },
 ];
 
 const faqs = [
-  { q: "What qualifies someone as an AI expert witness?", a: "A qualified AI expert witness should hold advanced technical credentials — typically a graduate degree in computer science, statistics, or machine learning — and have direct, hands-on experience building or auditing AI systems. For regulatory matters, relevant policy or agency experience adds significant credibility. We screen for all three: technical depth, practical experience, and prior testimony or regulatory engagement." },
-  { q: "Can you provide experts for AI bias claims under the EEOC or CFPB?", a: "Yes. Automated employment decision tools and credit decisioning models are active areas of regulatory enforcement. Our experts have audited hiring algorithms, credit scoring models, and tenant screening systems for discriminatory disparate impact — and have produced audit documentation suitable for EEOC and CFPB proceedings." },
-  { q: "What is the EU AI Act and does it affect US-based companies?", a: "The EU AI Act is the European Union's comprehensive regulatory framework for AI systems, enacted in 2024. It applies to any AI system that operates in or affects EU residents — regardless of where the developer or deployer is headquartered. US companies selling AI-enabled products or services in the EU are subject to its requirements, including conformity assessment obligations for high-risk systems." },
+  { q: "What qualifies someone as an AI expert witness?", a: "A qualified AI expert witness should hold advanced technical credentials — typically a graduate degree in computer science, statistics, or machine learning and have direct, hands-on experience building or auditing AI systems. For regulatory matters, relevant policy or agency experience adds significant credibility. We screen for all three: technical depth, practical experience, and prior testimony or regulatory engagement." },
+  { q: "Can you provide experts for AI bias claims under the EEOC or CFPB?", a: "Yes. Automated employment decision tools and credit decisioning models are active areas of regulatory enforcement. Our experts have audited hiring algorithms, credit scoring models, and tenant screening systems for discriminatory disparate impact and have produced audit documentation suitable for EEOC and CFPB proceedings." },
+  { q: "What is the EU AI Act and does it affect US-based companies?", a: "The EU AI Act is the European Union's comprehensive regulatory framework for AI systems, enacted in 2024. It applies to any AI system that operates in or affects EU residents regardless of where the developer or deployer is headquartered. US companies selling AI-enabled products or services in the EU are subject to its requirements, including conformity assessment obligations for high-risk systems." },
   { q: "How do you assess whether an AI system met the applicable standard of care?", a: "Standard of care analysis for AI systems draws on industry best practices (such as IEEE and ISO/IEC standards), applicable regulatory guidance, and the specific design and deployment context. Our experts evaluate whether the system was designed, tested, documented, and monitored in a manner consistent with what a reasonable developer in that space would have done at the time of the alleged harm." },
-  { q: "Can your experts assist with AI governance program design — not just litigation?", a: "Yes. A significant portion of our AI engagements are advisory rather than litigation-driven. We place governance framework consultants who can assess your current AI governance posture, identify gaps against applicable frameworks, and help design policy and process infrastructure to meet board, regulator, and audit requirements." },
+  { q: "Can your experts assist with AI governance program design not just litigation?", a: "Yes. A significant portion of our AI engagements are advisory rather than litigation-driven. We place governance framework consultants who can assess your current AI governance posture, identify gaps against applicable frameworks, and help design policy and process infrastructure to meet board, regulator, and audit requirements." },
   { q: "What types of AI incidents trigger the need for expert support?", a: "Common triggers include: a regulatory investigation into algorithmic decision-making; a plaintiff lawsuit alleging harm caused by an AI output; a data breach involving AI-processed data; a product liability claim related to an AI-enabled device; and internal discovery that an AI system produced discriminatory or harmful outputs. We can support incident response, regulatory response, and litigation defense across all of these scenarios." },
 ];
 
@@ -63,7 +63,7 @@ export default function AIComplianceGovernance() {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-[#F5F6F8]">
-        <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
         <div className="absolute left-0 top-0 h-full w-[3px] bg-[#C09B5B]" />
         <div className="mx-auto grid max-w-[1320px] grid-cols-1 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="flex flex-col justify-center px-6 py-20 sm:px-8 sm:py-24 lg:px-10 xl:px-12 lg:py-32">
@@ -74,7 +74,7 @@ export default function AIComplianceGovernance() {
             </h1>
             <div className="mt-8 h-px w-14 bg-[#C09B5B]/40" />
             <p className="mt-6 max-w-[560px] text-[15px] leading-[1.8] text-[#6B82A0] sm:text-base">
-              Technical experts and regulatory specialists for AI-related litigation, compliance program development, and governance advisory — across every major AI regulatory framework.
+              Technical experts and regulatory specialists for AI-related litigation, compliance program development, and governance advisory across every major AI regulatory framework.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link href="/contact" className="inline-flex h-[50px] items-center justify-center bg-[#0B1F3A] px-7 text-[11px] font-black uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#C09B5B] sm:px-9">
@@ -196,7 +196,7 @@ export default function AIComplianceGovernance() {
             <div>
               <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-[#C09B5B]">Stay Informed</p>
               <h2 className="font-light text-[clamp(1.75rem,2.5vw,2.25rem)] leading-tight tracking-[-0.01em] text-white">AI regulatory &amp; litigation updates, direct to your inbox</h2>
-              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">EU AI Act implementation updates, EEOC and CFPB enforcement actions, algorithmic bias litigation developments, and AI governance best practices — for counsel, compliance officers, and technology executives.</p>
+              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">EU AI Act implementation updates, EEOC and CFPB enforcement actions, algorithmic bias litigation developments, and AI governance best practices for counsel, compliance officers, and technology executives.</p>
             </div>
             <div>
               {subscribed ? (

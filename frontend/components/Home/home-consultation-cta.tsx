@@ -97,7 +97,7 @@ export default function HomeConsultationCta() {
           <p className="text-[1.0625rem] text-white/68 leading-[1.8] mb-5">
             Whether you need an independent medical examiner for a workers' compensation matter,
             a forensic investigator for a breach incident, or a damages expert for a commercial
-            dispute — our intake team will connect you with the right specialist within 24 hours.
+            dispute our intake team will connect you with the right specialist within 24 hours.
           </p>
           <p className="text-[1.0625rem] text-white/68 leading-[1.8] mb-12">
             All engagements are handled with strict confidentiality. Initial consultations are complimentary.
