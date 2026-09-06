@@ -8,7 +8,7 @@ const serviceAreas = [
   { title: "Medicare & Medicaid Audits", body: "Former CMS auditors and healthcare billing experts for RAC, UPIC, and MAC audit response and overpayment dispute matters." },
   { title: "Fraud, Waste & Abuse", body: "Experts for False Claims Act defense, qui tam relator matters, and OIG/DOJ investigation response across all provider types." },
   { title: "Stark Law & Anti-Kickback", body: "Healthcare transaction specialists reviewing physician compensation, referral arrangements, and joint venture structures for regulatory compliance." },
-  { title: "Clinical Standards of Care", body: "Board-certified specialists opining on whether care met applicable clinical standards — for medical malpractice, credentialing, and licensing matters." },
+  { title: "Clinical Standards of Care", body: "Board-certified specialists opining on whether care met applicable clinical standards for medical malpractice, credentialing, and licensing matters." },
   { title: "Healthcare Operations", body: "Operational experts covering hospital administration, nursing standards, pharmacy practices, and patient safety systems." },
 ];
 
@@ -21,7 +21,7 @@ const engagementTypes = [
 
 const benefits = [
   { title: "Former regulators — not just consultants", body: "Our compliance experts include former CMS auditors, OIG investigators, and state health department surveyors. They understand regulatory processes from the inside, which shapes how they assess exposure and advise on response strategy." },
-  { title: "Active clinical practitioners", body: "For clinical standards of care opinions, our physician reviewers hold active board certifications and maintain current clinical practice. Their opinions reflect today's clinical environment — not decade-old textbook standards." },
+  { title: "Active clinical practitioners", body: "For clinical standards of care opinions, our physician reviewers hold active board certifications and maintain current clinical practice. Their opinions reflect today's clinical environment not decade-old textbook standards." },
   { title: "Full investigation lifecycle support", body: "From the moment you receive a civil investigative demand or RAC audit notice through final resolution, we can place experts who support document review, interview preparation, and written submissions to the relevant agency." },
   { title: "Proactive compliance positioning", body: "The most effective healthcare compliance support happens before a subpoena arrives. We place compliance experts who assess current program gaps and design remediation plans that reduce audit and investigation risk." },
   { title: "Transaction-ready due diligence", body: "For healthcare M&A, regulatory exposure that isn't identified pre-close becomes the buyer's problem. Our compliance experts conduct pre-acquisition reviews that identify billing irregularities, coding risks, and regulatory flags before they become post-close liabilities." },
@@ -29,10 +29,10 @@ const benefits = [
 ];
 
 const faqs = [
-  { q: "What types of healthcare organizations do your compliance experts work with?", a: "Our healthcare compliance experts work with the full range of provider and payer organizations — hospitals and health systems, physician groups and medical practices, home health agencies, long-term care facilities, ambulatory surgery centers, behavioral health providers, health plans and managed care organizations, and pharmaceutical and life sciences companies. The specific compliance framework varies by organization type, and our experts are matched accordingly." },
+  { q: "What types of healthcare organizations do your compliance experts work with?", a: "Our healthcare compliance experts work with the full range of provider and payer organizations hospitals and health systems, physician groups and medical practices, home health agencies, long-term care facilities, ambulatory surgery centers, behavioral health providers, health plans and managed care organizations, and pharmaceutical and life sciences companies. The specific compliance framework varies by organization type, and our experts are matched accordingly." },
   { q: "Can you help us respond to a RAC, UPIC, or MAC audit?", a: "Yes. We regularly place former CMS auditors and healthcare billing specialists to support responses to Recovery Audit Contractor, Unified Program Integrity Contractor, and Medicare Administrative Contractor audit requests. Our experts can review the flagged claims, assess the audit findings, prepare the written response, and support appeals if the initial determination is adverse." },
   { q: "What is the difference between a False Claims Act defense and an OIG investigation defense?", a: "A False Claims Act (FCA) defense arises from a qui tam lawsuit filed by a relator or a DOJ-initiated civil enforcement action alleging fraudulent billing to government health programs. An OIG investigation is a federal administrative investigation that may or may not result in a civil or criminal referral. Both require compliance and clinical experts, but the procedural context, discovery obligations, and resolution mechanisms differ significantly. Our experts have experience supporting both." },
-  { q: "Can your experts support Stark Law and Anti-Kickback analysis in healthcare transactions?", a: "Yes. Physician compensation arrangements, service line joint ventures, and hospital-physician alignment structures are among the highest-risk areas in healthcare M&A. Our experts analyze these arrangements for Stark Law technical compliance, Anti-Kickback Statute exception and safe harbor applicability, and fair market value — producing written opinions that can be used in regulatory submissions or transaction due diligence." },
+  { q: "Can your experts support Stark Law and Anti-Kickback analysis in healthcare transactions?", a: "Yes. Physician compensation arrangements, service line joint ventures, and hospital-physician alignment structures are among the highest-risk areas in healthcare M&A. Our experts analyze these arrangements for Stark Law technical compliance, Anti-Kickback Statute exception and safe harbor applicability, and fair market value producing written opinions that can be used in regulatory submissions or transaction due diligence." },
   { q: "How quickly can you place a healthcare compliance expert for an urgent matter?", a: "For most compliance matter types, we can identify and confirm an expert within 24–48 hours of intake. For OCR breach response, OIG investigation notices, and CID responses with near-term deadlines, we flag urgency at intake and expedite the matching process. Contact our intake team directly by phone for urgent placements." },
   { q: "Do your clinical experts provide opinions on nursing standards as well as physician standards of care?", a: "Yes. We maintain a network of nursing experts — including nurse practitioners, clinical nurse specialists, and nursing administrators — who can opine on nursing standards of care in medical malpractice, wrongful death, and regulatory licensing matters. We also have experts in pharmacy practice, respiratory therapy, and other allied health disciplines." },
 ];
@@ -61,7 +61,7 @@ export default function HealthcareCompliance() {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-[#F5F6F8]">
-        <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.035]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 20 L55 50 L30 65 L5 50 L5 20 Z' fill='none' stroke='%230B1F3A' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: "60px 60px" }} />
         <div className="absolute left-0 top-0 h-full w-[3px] bg-[#C09B5B]" />
         <div className="mx-auto grid max-w-[1320px] grid-cols-1 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="flex flex-col justify-center px-6 py-20 sm:px-8 sm:py-24 lg:px-10 xl:px-12 lg:py-32">
@@ -153,8 +153,8 @@ export default function HealthcareCompliance() {
           <div>
             <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-[#C09B5B]">Expert Backgrounds</p>
             <h2 className="mb-6 font-light text-[clamp(1.75rem,2.5vw,2.25rem)] leading-tight tracking-[-0.01em] text-[#0B1F3A]">Practitioners who've sat on both sides of the table</h2>
-            <p className="text-[15px] leading-[1.9] text-[#6B82A0]">Our healthcare compliance experts include former CMS employees, OIG investigators, state health department surveyors, and hospital chief compliance officers. They understand regulatory processes from the inside — and that shapes how they advise on matters.</p>
-            <p className="mt-5 text-[15px] leading-[1.9] text-[#6B82A0]">For clinical matters, our physician reviewers hold active board certifications and maintain current clinical practice — so their opinions reflect today's clinical environment, not textbook standards from a decade ago.</p>
+            <p className="text-[15px] leading-[1.9] text-[#6B82A0]">Our healthcare compliance experts include former CMS employees, OIG investigators, state health department surveyors, and hospital chief compliance officers. They understand regulatory processes from the inside and that shapes how they advise on matters.</p>
+            <p className="mt-5 text-[15px] leading-[1.9] text-[#6B82A0]">For clinical matters, our physician reviewers hold active board certifications and maintain current clinical practice so their opinions reflect today's clinical environment, not textbook standards from a decade ago.</p>
           </div>
           <div className="grid grid-cols-2 gap-4 content-start">
             {[
@@ -196,7 +196,7 @@ export default function HealthcareCompliance() {
             <div>
               <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-[#C09B5B]">Stay Informed</p>
               <h2 className="font-light text-[clamp(1.75rem,2.5vw,2.25rem)] leading-tight tracking-[-0.01em] text-white">Healthcare compliance insights, direct to your inbox</h2>
-              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">OIG work plan updates, CMS audit program developments, False Claims Act enforcement trends, HIPAA enforcement actions, and Stark Law regulatory guidance — for healthcare counsel, compliance officers, and hospital administrators.</p>
+              <p className="mt-4 text-[14px] leading-[1.8] text-white/45">OIG work plan updates, CMS audit program developments, False Claims Act enforcement trends, HIPAA enforcement actions, and Stark Law regulatory guidance for healthcare counsel, compliance officers, and hospital administrators.</p>
             </div>
             <div>
               {subscribed ? (

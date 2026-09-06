@@ -39,12 +39,16 @@ const pillars = [
 function EliLogoLight({ size = 52 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="44" cy="44" r="42" stroke="white" strokeWidth="2.5" fill="transparent" />
-      <path d="M44 4 A40 40 0 0 1 84 44" stroke="#C09B5B" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <circle cx="44" cy="44" r="42" stroke="white" strokeWidth="2.5" fill="transparant" />
+      <path d="M44 4 A40 40 0 0 1 82 44" stroke="#C09B5B" strokeWidth="3" fill="none" strokeLinecap="round" />
       <path d="M44 84 A40 40 0 0 1 4 44" stroke="#C09B5B" strokeWidth="2" fill="none" strokeLinecap="round" />
       <text x="44" y="56" textAnchor="middle" fontFamily="Georgia, serif" fontSize="28" fontWeight="700" fill="white" letterSpacing="-1">ELI</text>
       <line x1="28" y1="30" x2="60" y2="30" stroke="white" strokeWidth="1.4" opacity="0.7" />
       <line x1="44" y1="18" x2="44" y2="30" stroke="white" strokeWidth="1.4" opacity="0.7" />
+      <line x1="32" y1="30" x2="28" y2="26" stroke="#0B1F3A" strokeWidth="1.2" />
+      <line x1="56" y1="30" x2="60" y2="26" stroke="#0B1F3A" strokeWidth="1.2" />
+      <path d="M26 26 Q30 23 34 26" stroke="#0B1F3A" strokeWidth="1.2" fill="none" />
+      <path d="M54 26 Q58 23 62 26" stroke="#0B1F3A" strokeWidth="1.2" fill="none" />
     </svg>
   );
 }
@@ -74,10 +78,10 @@ export default function Footer() {
               <EliLogoLight size={52} />
               <span className="leading-none">
                 <span className="block font-heading text-[1rem] font-semibold uppercase tracking-wide text-white">
-                  Experts Legal
+                  Expert Legal
                 </span>
                 <span className="block font-heading text-[1.22rem] font-bold uppercase tracking-[0.06em] text-[#C09B5B]">
-                  Institute&trade;
+                  Institute
                 </span>
                 <span className="mt-1 block text-[0.5rem] font-bold uppercase tracking-[0.18em] text-white/35">
                   Expertise &middot; Evidence &middot; Results

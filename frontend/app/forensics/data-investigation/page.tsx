@@ -128,7 +128,8 @@ export default function DataInvestigationPage() {
               className="font-serif font-light leading-[1.03] tracking-[-0.01em] text-white"
               style={{ fontSize: "clamp(2.7rem,5vw,5.35rem)" }}
             >
-              Discovery, analysis, and authentication of critical digital information.
+              Discovery, analysis, and authentication of critical digital
+              information.
             </h1>
 
             <p className="mt-7 max-w-[700px] text-[16px] leading-[1.85] text-white/65">
@@ -164,7 +165,10 @@ export default function DataInvestigationPage() {
                 ["Data", "Tracing and analysis"],
                 ["Records", "Authentication review"],
               ].map(([value, label]) => (
-                <div key={label} className="border-t border-white/10 pt-5 first:border-t-0 first:pt-0">
+                <div
+                  key={label}
+                  className="border-t border-white/10 pt-5 first:border-t-0 first:pt-0"
+                >
                   <p className="font-serif text-[1.65rem] font-light leading-none text-white">
                     {value}
                   </p>
@@ -192,9 +196,9 @@ export default function DataInvestigationPage() {
           <div className="space-y-5 text-[15px] leading-[1.85] text-[#3D5470] sm:text-base">
             <p>
               Modern disputes often turn on what the records show: who accessed
-              data, when files changed, whether documents are authentic, what
-              systems contain relevant information, and whether production is
-              complete.
+              information, when files changed, whether documents are authentic,
+              what systems contain relevant information, and whether production
+              is complete.
             </p>
             <p>
               Our data investigation work helps legal and corporate teams turn
@@ -213,13 +217,17 @@ export default function DataInvestigationPage() {
               Capabilities
             </p>
             <h2 className="font-serif text-[clamp(2rem,3.2vw,3rem)] font-light leading-[1.12] text-[#0B1F3A]">
-              Structured investigation for records, repositories, and disputed data.
+              Structured investigation for records, repositories, and disputed
+              data.
             </h2>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((item) => (
-              <article key={item.title} className="border border-[#E1E6EF] bg-white p-6 sm:p-7">
+              <article
+                key={item.title}
+                className="border border-[#E1E6EF] bg-white p-6 sm:p-7"
+              >
                 <div className="mb-5 h-px w-10 bg-[#C09B5B]" />
                 <h3 className="font-serif text-[1.45rem] font-light leading-snug text-[#0B1F3A]">
                   {item.title}
@@ -240,13 +248,17 @@ export default function DataInvestigationPage() {
               Common Engagements
             </p>
             <h2 className="font-serif text-[clamp(2rem,3.2vw,3rem)] font-light leading-[1.12] text-[#0B1F3A]">
-              For discovery disputes, internal investigations, and data-driven claims.
+              For discovery disputes, internal investigations, and data-driven
+              claims.
             </h2>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
             {useCases.map((item) => (
-              <div key={item} className="flex items-start gap-3 border border-[#E5EAF1] bg-[#F7F9FC] px-4 py-3 text-[13.5px] leading-snug text-[#3D5470]">
+              <div
+                key={item}
+                className="flex items-start gap-3 border border-[#E5EAF1] bg-[#F7F9FC] px-4 py-3 text-[13.5px] leading-snug text-[#3D5470]"
+              >
                 <span className="mt-[6px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#C09B5B]" />
                 <span>{item}</span>
               </div>
@@ -268,7 +280,10 @@ export default function DataInvestigationPage() {
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {process.map((item) => (
-              <article key={item.step} className="border border-white/[0.08] bg-white/[0.035] p-6">
+              <article
+                key={item.step}
+                className="border border-white/[0.08] bg-white/[0.035] p-6"
+              >
                 <span className="text-[11px] font-black tracking-[0.18em] text-[#C09B5B]">
                   {item.step}
                 </span>
