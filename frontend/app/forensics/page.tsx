@@ -1,0 +1,14 @@
+import Link from "next/link";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = generatePageMetadata({ title: "Forensic Services", description: "Digital, cybersecurity, and data-investigation support for matters requiring careful evidence preservation and defensible analysis.", path: "/forensics" });
+
+const services = [
+  { title: "Digital Forensics", href: "/forensics/digital", text: "Preservation, collection, and examination of digital devices and electronic evidence." },
+  { title: "Cybersecurity Forensics", href: "/forensics/cybersecurity", text: "Technical investigation and expert support for cyber incidents and related disputes." },
+  { title: "Data Investigation", href: "/forensics/data-investigation", text: "Structured analysis of complex records, metadata, and data-integrity questions." },
+];
+
+export default function ForensicsPage() {
+  return <main className="bg-white"><section className="bg-[#071225] text-white"><div className="mx-auto max-w-[1320px] px-6 py-20 sm:px-8 sm:py-24 lg:px-10"><p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#C09B5B]">Forensic services</p><h1 className="mt-5 max-w-[820px] font-serif text-[clamp(2.7rem,5vw,5.2rem)] font-light leading-[1.04]">Evidence handled with care. Analysis built for scrutiny.</h1><p className="mt-7 max-w-[720px] text-[16px] leading-[1.85] text-white/70">We help legal teams identify, preserve, and understand digital evidence through a disciplined, matter-specific process.</p></div></section><section className="mx-auto max-w-[1320px] px-6 py-20 sm:px-8 lg:px-10"><div className="grid gap-5 md:grid-cols-3">{services.map((service) => <Link key={service.href} href={service.href} className="group border border-[#E1E6EF] p-7 transition hover:border-[#C09B5B] hover:shadow-lg"><p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#C09B5B]">Focused support</p><h2 className="mt-4 font-serif text-[2rem] font-light text-[#0B1F3A]">{service.title}</h2><p className="mt-4 text-[14px] leading-7 text-[#3D5470]">{service.text}</p><span className="mt-7 inline-block text-[11px] font-black uppercase tracking-[0.15em] text-[#0B1F3A] group-hover:text-[#C09B5B]">Explore service &rarr;</span></Link>)}</div></section><section className="bg-[#F5F6F8]"><div className="mx-auto max-w-[1320px] px-6 py-16 sm:px-8 lg:px-10"><h2 className="font-serif text-[2.2rem] font-light text-[#0B1F3A]">A defensible process begins early.</h2><p className="mt-4 max-w-[760px] text-[15px] leading-8 text-[#3D5470]">If your matter involves potentially relevant electronic information, timely planning can help preserve options and reduce avoidable uncertainty.</p><Link href="/contact" className="mt-7 inline-flex bg-[#0B1F3A] px-7 py-4 text-[11px] font-black uppercase tracking-[0.15em] text-white hover:bg-[#C09B5B]">Request a consultation</Link></div></section></main>;
+}

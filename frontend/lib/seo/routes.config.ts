@@ -34,6 +34,32 @@ export const ROUTES_CONFIG: Record<string, RouteSEO> = {
     priority: 0.9,
   },
 
+  "/forensics": {
+    title: "Forensic Services",
+    description:
+      "Digital, cybersecurity, and data-investigation support for matters requiring careful evidence preservation and defensible analysis.",
+    priority: 0.8,
+  },
+
+  "/industries": {
+    title: "Industries We Support",
+    description:
+      "Specialized expert, forensic, medical-review, and compliance support for legal, healthcare, technology, and corporate matters.",
+    priority: 0.7,
+  },
+
+  "/privacy-policy": {
+    title: "Privacy Policy",
+    description: "How Expert Legal & Forensics handles information submitted through this website.",
+    priority: 0.3,
+  },
+
+  "/terms": {
+    title: "Terms of Use",
+    description: "Terms governing use of the Expert Legal & Forensics website.",
+    priority: 0.3,
+  },
+
   "/expert-services/ai-compliance-governance": {
     title: "AI Compliance & Governance Consulting",
     description:

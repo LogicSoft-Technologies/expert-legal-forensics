@@ -39,7 +39,7 @@ const services = [
   },
   {
     title: "Digital & Cyber Forensics",
-    href: "/expert-services/digital-cyber-forensics",
+    href: "/forensics/digital",
     description: "Our forensic investigators apply court-accepted methodologies to collect, preserve, and analyze electronic evidence from endpoints, mobile devices, cloud platforms, and network infrastructure maintaining unbroken chain of custody.",
     tags: ["Digital Evidence", "Cybersecurity", "eDiscovery"],
   },

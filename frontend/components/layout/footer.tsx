@@ -106,7 +106,7 @@ export default function Footer() {
                 href={SITE_CONFIG.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Experts Legal Institute on LinkedIn"
+                aria-label="Expert Legal & Forensics on LinkedIn"
                 className="mt-2 inline-flex h-10 w-10 items-center justify-center border border-white/15 text-white/55 transition hover:border-[#C09B5B] hover:text-[#C09B5B]"
               >
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -155,7 +155,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 pt-6 text-[11.5px] text-white/38 md:flex-row md:items-center md:justify-between">
-          <p>&copy; {new Date().getFullYear()} Experts Legal Institute&trade;. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Expert Legal &amp; Forensics&trade;. All rights reserved.</p>
           <div className="flex flex-wrap gap-5">
             <Link href="/privacy-policy" className="transition hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="transition hover:text-white">Terms of Use</Link>
